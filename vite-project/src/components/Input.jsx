@@ -1,9 +1,9 @@
-
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 export default function Input(props){
     return(
         <div>
-            <label>{props.label}</label>
+            <label>{props.label} , {props.value}</label>
             <input 
             type={props.type} 
             value={props.value} 
@@ -18,5 +18,6 @@ Input.PropTypes = {
     label : PropTypes.string,
     type : PropTypes.string,
     onChange : PropTypes.func,
+    value : PropTypes.string,
     required : PropTypes.bool,
 }
