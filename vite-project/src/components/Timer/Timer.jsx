@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 
 export default function Timer(){
-    const [time,setTime] = useState(10);
+    const [time, setTime] = useState(10);
 
-
-    useEffect(() => {
-        const interval = setInterval(() => {
+    useEffect(function() {
+        const interval = setInterval(function() {
             setTime(time - 1);
         } , 1000)
-
         return function() {
+            console.log('limpeza');
             clearInterval(interval);
         }
     }, [])
+
     return(
-        <>
-        <h1>{time}</h1>
-        </>
+        <div>
+            {time}
+        </div>
     )
 }
